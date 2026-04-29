@@ -119,6 +119,8 @@ On loading few charts need to be shown on the following expense categories.
 - Pie chart on expenses.
 - Bar chart for comparing with previous month.
 
+Portfolio Summary also required in dashboard.
+
 ### 2. Module name - Summary.
 
 This module offers the user to track his income and expenses of the registered accounts. If the user have multiple accounts, whole details can be viewed in a single window.
