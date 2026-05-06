@@ -1,0 +1,43 @@
+{
+  "name": "xpeninc-ui",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/xpeninc-ui/src",
+  "tags": [],
+  "targets": {
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "xpeninc-ui:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "xpeninc-ui:build",
+        "port": 4200,
+        "spa": true
+      }
+    },
+    "serve-ssr": {
+      "continuous": true,
+      "executor": "@angular-devkit/build-angular:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "xpeninc-ui:build:development",
+          "serverTarget": "xpeninc-ui:server:development"
+        },
+        "production": {
+          "browserTarget": "xpeninc-ui:build:production",
+          "serverTarget": "xpeninc-ui:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    }
+  }
+}
