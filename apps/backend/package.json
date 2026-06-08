@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend server for SaInEx",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/koa": "^3.0.3",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.4"
+  }
+}
