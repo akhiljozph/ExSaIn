@@ -1,5 +1,5 @@
 {
-  "name": "SaInEx",
+  "name": "sainex",
   "private": true,
   "scripts": {
     "build": "turbo run build",
