@@ -22,5 +22,10 @@
     "eslint-config-next": "16.2.7",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "minimatch": ">=9.0.7",
+    "flatted": ">=3.4.2",
+    "picomatch": ">=4.0.4"
   }
 }
