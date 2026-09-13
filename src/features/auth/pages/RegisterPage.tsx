@@ -5,15 +5,12 @@ import Typography from '@mui/material/Typography'
 import { Link as RouterLink } from 'react-router'
 import AuthLayout from '../../../layouts/AuthLayout/AuthLayout'
 import AuthBrand from '../components/AuthBrand'
-import AuthVisual from '../components/AuthVisual'
 import RegisterForm from '../components/RegisterForm'
+import RegisterVisual from '../components/RegisterVisual'
 
 function RegisterPage() {
   return (
-    <AuthLayout
-      visualPosition="left"
-      visual={<AuthVisual variant="register" />}
-    >
+    <AuthLayout visualPosition="left" visual={<RegisterVisual />}>
       <Stack spacing={3}>
         <AuthBrand />
 

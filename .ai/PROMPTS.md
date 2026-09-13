@@ -7,3 +7,4 @@ This file contains reusable prompts and important AI instructions used during Ex
 - 003-auth-layout-foundation.md
 - 004-theme-foundation.md
 - 005-auth-ui.md
+- 006-auth-visual-panels.md

@@ -5,15 +5,12 @@ import Typography from '@mui/material/Typography'
 import { Link as RouterLink } from 'react-router'
 import AuthLayout from '../../../layouts/AuthLayout/AuthLayout'
 import AuthBrand from '../components/AuthBrand'
-import AuthVisual from '../components/AuthVisual'
 import LoginForm from '../components/LoginForm'
+import LoginVisual from '../components/LoginVisual'
 
 function LoginPage() {
   return (
-    <AuthLayout
-      visualPosition="right"
-      visual={<AuthVisual variant="login" />}
-    >
+    <AuthLayout visualPosition="right" visual={<LoginVisual />}>
       <Stack spacing={3}>
         <AuthBrand />
 

@@ -1,28 +1,22 @@
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import { alpha } from '@mui/material/styles'
+import type { ReactNode } from 'react'
 
 type AuthVisualProps = {
-  variant: 'login' | 'register'
-}
-
-const copy = {
-  login: 'Your money, clearly organised.',
-  register: 'Income, expenses and savings in one place.',
+  /** Which brand colour tints the panel. */
+  accent: 'primary' | 'secondary'
+  children: ReactNode
 }
 
 /**
- * Decorative panel for the authentication pages. Deliberately static: the
- * animation that will live here is a separate task.
+ * Shared shell for the authentication side panels: brand tint, decorative
+ * shapes and content sizing. Each page supplies its own content.
  */
-function AuthVisual({ variant }: AuthVisualProps) {
+function AuthVisual({ accent, children }: AuthVisualProps) {
   return (
     <Box
       sx={(theme) => {
-        const accent =
-          variant === 'login'
-            ? theme.palette.primary.main
-            : theme.palette.secondary.main
+        const color = theme.palette[accent].main
 
         return {
           position: 'relative',
@@ -31,41 +25,40 @@ function AuthVisual({ variant }: AuthVisualProps) {
           height: '100%',
           display: 'grid',
           placeItems: 'center',
-          padding: theme.spacing(5, 3),
-          backgroundColor: alpha(accent, 0.08),
+          padding: theme.spacing(6, 4),
+          backgroundColor: alpha(color, 0.08),
           '&::before, &::after': {
             content: '""',
             position: 'absolute',
             borderRadius: '50%',
-            backgroundColor: alpha(accent, 0.1),
+            backgroundColor: alpha(color, 0.1),
           },
           '&::before': {
-            width: 280,
-            height: 280,
-            top: '-12%',
-            insetInlineEnd: '-10%',
+            width: 320,
+            height: 320,
+            top: '-14%',
+            insetInlineEnd: '-12%',
           },
           '&::after': {
-            width: 200,
-            height: 200,
-            bottom: '-8%',
-            insetInlineStart: '-6%',
+            width: 220,
+            height: 220,
+            bottom: '-10%',
+            insetInlineStart: '-8%',
           },
         }
       }}
     >
-      <Typography
-        variant="h3"
+      <Box
         sx={{
           position: 'relative',
-          maxWidth: 340,
-          textAlign: 'center',
-          // On small screens this sits behind the form card, so hide it.
+          width: '100%',
+          maxWidth: 400,
+          // Below md this panel is only a background behind the form card.
           display: { xs: 'none', md: 'block' },
         }}
       >
-        {copy[variant]}
-      </Typography>
+        {children}
+      </Box>
     </Box>
   )
 }
