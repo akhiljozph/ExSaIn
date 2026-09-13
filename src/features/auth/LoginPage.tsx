@@ -1,3 +1,4 @@
+import Typography from '@mui/material/Typography'
 import AuthLayout from '../../layouts/AuthLayout/AuthLayout'
 import AuthVisual from './components/AuthVisual'
 
@@ -7,8 +8,12 @@ function LoginPage() {
       visualPosition="right"
       visual={<AuthVisual variant="login" label="Login visual" />}
     >
-      <h1>Login</h1>
-      <p>Login content placeholder</p>
+      <Typography variant="h1" gutterBottom>
+        Login
+      </Typography>
+      <Typography variant="body2" color="text.secondary">
+        Login content placeholder
+      </Typography>
     </AuthLayout>
   )
 }

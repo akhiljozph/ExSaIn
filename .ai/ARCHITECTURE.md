@@ -37,6 +37,7 @@ src/
 ├── types/
 ├── utils/
 ├── assets/
+├── theme/
 │
 ├── main.tsx
 └── index.css
@@ -253,6 +254,38 @@ Contains application assets such as:
 * Icons
 * Fonts
 * Static visual resources
+
+---
+
+### `theme/`
+
+Contains the ExSaIn design system as a single MUI theme.
+
+```text
+theme/
+├── index.ts        // createTheme composition
+├── palette.ts      // colours
+├── typography.ts   // type scale
+├── shadows.ts      // elevation ramp
+├── components.ts   // MUI component defaults
+└── tokens.ts       // radius scale shared by index.ts and components.ts
+```
+
+Material UI is the application's component library, and the theme is the single
+source of truth for colour, typography, spacing, radius and elevation.
+
+Rules:
+
+* Components should read design values from the theme rather than hardcoding
+  colours, radii or font sizes.
+* The theme contains presentation only. No business logic belongs here.
+* The theme is applied once, at application level, via
+  `app/providers/AppThemeProvider.tsx`.
+* Screen-specific styling belongs with its component or feature, not in the
+  theme.
+
+The visual direction is deep blue primary with teal as a secondary accent, on a
+light neutral background.
 
 ---
 
