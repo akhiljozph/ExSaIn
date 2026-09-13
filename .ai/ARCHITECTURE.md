@@ -92,12 +92,18 @@ For example:
 ```text
 features/
 └── expenses/
+    ├── pages/
     ├── components/
     ├── hooks/
     ├── services/
     ├── types/
     └── ...
 ```
+
+A feature's `pages/` directory holds the route-level components that
+`app/routes.tsx` maps to. A page composes a layout, the feature's components
+and nothing else; the form and presentation pieces it uses live in the
+feature's `components/`.
 
 Do not move feature-specific code into global folders merely for organizational purposes.
 
