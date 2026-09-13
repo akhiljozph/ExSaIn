@@ -1,0 +1,31 @@
+.auth-visual {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: start center;
+  padding: 40px 16px;
+  box-sizing: border-box;
+}
+
+.auth-visual__label {
+  font-family: var(--heading);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-h);
+  opacity: 0.55;
+}
+
+.auth-visual--login {
+  background: linear-gradient(135deg, var(--accent-bg), var(--code-bg));
+}
+
+.auth-visual--register {
+  background: linear-gradient(315deg, var(--accent-bg), var(--code-bg));
+}
+
+@media (min-width: 768px) {
+  .auth-visual {
+    place-items: center;
+  }
+}

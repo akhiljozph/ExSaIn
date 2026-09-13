@@ -1,0 +1,74 @@
+.auth-layout {
+  position: relative;
+  display: grid;
+  min-height: 100svh;
+  isolation: isolate;
+}
+
+/* Small screens: the visual fills the viewport and the content sits on top. */
+.auth-layout__visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.auth-layout__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+.auth-layout__content-inner {
+  width: 100%;
+  max-width: 420px;
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+/* Large screens: two side-by-side panels. */
+@media (min-width: 768px) {
+  .auth-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .auth-layout__visual {
+    position: static;
+    grid-row: 1;
+  }
+
+  .auth-layout__content {
+    grid-row: 1;
+    padding: 48px;
+  }
+
+  .auth-layout--visual-right .auth-layout__visual {
+    grid-column: 2;
+  }
+
+  .auth-layout--visual-right .auth-layout__content {
+    grid-column: 1;
+  }
+
+  .auth-layout--visual-left .auth-layout__visual {
+    grid-column: 1;
+  }
+
+  .auth-layout--visual-left .auth-layout__content {
+    grid-column: 2;
+  }
+
+  .auth-layout__content-inner {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+}
